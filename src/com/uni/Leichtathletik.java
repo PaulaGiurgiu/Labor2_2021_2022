@@ -1,9 +1,12 @@
 package com.uni;
 
 public class Leichtathletik implements Sport{
-    /* Nachbedingung: die Zeit der "Leichtathletik"-Aktivität zuruckgeben */
+    /**
+     * //die "kalkuliereZeit"-Methode aus der Interface "Sport" uberschreiben
+     * @return die Zeit der "Leichtathletik"-Aktivität zuruckgeben
+     */
     @Override
-    public double kalkuliereZeit() {                        //die "kalkuliereZeit"-Methode aus der Interface "Sport" uberschreiben
+    public double kalkuliereZeit() {
         Hindernislauf hl = new Hindernislauf();
         Hochsprung hs = new Hochsprung();
 

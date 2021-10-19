@@ -7,8 +7,12 @@ public class Benutzer {
     private String nachname;
     private List<Sport> sport;
 
-    /*  Vorbedingung: zwei Strings und eine Liste von Sportarten*/
-    /*  Nachbedingung: ein Objekt von Typ "Benutzer" */
+    /**
+     * //ein Objekt von Typ "Benutzer" erstellen
+     * @param vorname ein String
+     * @param nachname ein String
+     * @param sport eine Liste von Sportarten
+     */
     public Benutzer(String vorname, String nachname, List<Sport> sport)
     {
         this.vorname = vorname;
@@ -17,43 +21,58 @@ public class Benutzer {
     }
 
     /* Getters */
-    /*  Nachbedingung: der aktuelle Vorname zuruckgeben */
+    /**
+     * @return der aktuelle Vorname zuruckgeben
+     */
     public String getVorname() {
         return vorname;
     }
 
-    /*  Nachbedingung: der aktuelle Nachname zuruckgeben */
+    /**
+     * @return der aktuelle Nachname zuruckgeben
+     */
     public String getNachname() {
         return nachname;
     }
 
-    /*  Nachbedingung: die aktuelle Liste von Sportarten zuruckgeben */
+    /**
+     * @return die aktuelle Liste von Sportarten zuruckgeben
+     */
     public List<Sport> getSport() {
         return sport;
     }
 
     /* Setters */
-    /*  Vorbedingung: ein neuer Vorname */
-    /*  Nachbedingung: der alte Vorname wird mit dem gegebenen Vorname verandert */
+    /**
+     * //der alte Vorname wird mit dem gegebenen Vorname verandert
+     * @param vorname ein neuer Vorname
+     */
     public void setVorname(String vorname) {
         this.vorname = vorname;
     }
 
-    /*  Vorbedingung: ein neuer Nachname */
-    /*  Nachbedingung: der alte Nachname wird mit dem gegebenen Nachname verandert */
+    /**
+     * //der alte Nachname wird mit dem gegebenen Nachname verandert
+     * @param nachname ein neuer Nachname
+     */
     public void setNachname(String nachname) {
         this.nachname = nachname;
     }
 
-    /*  Vorbedingung: eine Liste von Sportarten*/
-    /*  Nachbedingung: die alte Liste wird mit der gegebenen Liste verandert*/
+    /**
+     * //die alte Liste wird mit der gegebenen Liste verandert
+     * @param sport eine Liste von Sportarten
+     */
     public void setSport(List<Sport> sport) {
         this.sport = sport;
     }
 
     /* Methoden */
-    /*  Nachbedingung: die Zeit der allen gegebenen Sportarten*/
-    public double kalkuliereZeit() {                                //die "kalkuliereZeit"-Methode rechnet die Zeit der allen gewahlten Sportarten
+    /**
+     * //die "kalkuliereZeit"-Methode rechnet die Zeit der allen gewahlten Sportarten
+     * @return die Zeit der allen gegebenen Sportarten
+     */
+    public double kalkuliereZeit() {
         int sum = 0;
         for (Sport sp:sport) {
             sum += sp.kalkuliereZeit();
@@ -61,9 +80,12 @@ public class Benutzer {
         return sum;
     }
 
-    /*  Vorbedingung: ein Objekt von Typ "Sport" */
-    /*  Nachbedingung: die Zeit der gegebenen Sportart */
-    public double kalkuliereZeit(Sport s)                           //die "kalkuliereZeit"-Methode rechnet die Zeit einer bestimten Sportart
+    /**
+     * //die "kalkuliereZeit"-Methode rechnet die Zeit einer bestimten Sportart
+     * @param s ein Objekt von Typ "Sport"
+     * @return die Zeit der gegebenen Sportart
+     */
+    public double kalkuliereZeit(Sport s)
     {
         int count = 0;
         for (int i = 0; i < sport.size(); i++) {                    //wir laufen die gegebene Liste durch, die Anzahl der Sportarten "s" zu finden
@@ -96,8 +118,11 @@ public class Benutzer {
         return count * s.kalkuliereZeit();
     }
 
-    /*  Nachbedingung: die Durchschnittzeit der allen Sportarten des Benutzers */
-    public double kalkuliereDurschnittszeit()                       //die "kalkuliereDurschnittszeit"-Methode rechnet die Durchschnittzeit der allen gewahlten Sportarten
+    /**
+     * //die "kalkuliereDurschnittszeit"-Methode rechnet die Durchschnittzeit der allen gewahlten Sportarten
+     * @return die Durchschnittzeit der allen Sportarten des Benutzers
+     */
+    public double kalkuliereDurschnittszeit()
     {
         return kalkuliereZeit()/sport.size();
     }

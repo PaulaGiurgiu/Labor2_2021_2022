@@ -1,9 +1,12 @@
 package com.uni;
 
 public class Mannschaftssport implements Sport{
-    /* Nachbedingung: die Zeit der "Mannschaftssport"-Aktivität zuruckgeben */
+    /**
+     * //die "kalkuliereZeit"-Methode aus der Interface "Sport" uberschreiben
+     * @return die Zeit der "Mannschaftssport"-Aktivität zuruckgeben
+     */
     @Override
-    public double kalkuliereZeit() {                            //die "kalkuliereZeit"-Methode aus der Interface "Sport" uberschreiben
+    public double kalkuliereZeit() {
         Basketball bb = new Basketball();
         Fussball fb = new Fussball();
 
